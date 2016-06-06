@@ -14,6 +14,10 @@ required_ids = [""]
 def index(request):
         id = request["name"]
 
+        f = open("/home/ubuntu/groupme/bishop_functions/log.txt", "w")
+        f.write(resp.text)
+        f.close()
+
         if id != "bishop_functions":
             msg = id + " sent a message."
             json_data = {"bot_id": "f6c64113661287ad36f855469a", "message": msg}
