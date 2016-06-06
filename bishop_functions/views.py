@@ -12,10 +12,10 @@ required_ids = [""]
 
 @csrf_exempt
 def index(request):
-        id = request["name"]
+        #id = request["name"]
 
         f = open("/home/ubuntu/groupme/bishop_functions/log.txt", "w")
-        f.write(request)
+        f.write("TEST")
         f.close()
 
         if id != "bishop_functions":
