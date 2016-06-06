@@ -15,7 +15,7 @@ def index(request):
         id = request["name"]
 
         f = open("/home/ubuntu/groupme/bishop_functions/log.txt", "w")
-        f.write(resp.text)
+        f.write(request)
         f.close()
 
         if id != "bishop_functions":
