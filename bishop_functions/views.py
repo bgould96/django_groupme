@@ -16,4 +16,4 @@ def index(request):
 
 
 
-        return HttpResponse("Users updated.")
+        return HttpResponse(request)
