@@ -12,8 +12,15 @@ required_ids = [""]
 
 @csrf_exempt
 def index(request):
-        print request
+        id = request["name"]
 
+        if id != "bishop_functions":
+            msg = id + " sent a message."
+            json_data = {"bot_id": "f6c64113661287ad36f855469a", "message": msg}
 
+            resp = requests.post(
+                    "https://api.groupme.com/v3/bots/post",
+                    data=json.dumps(json_data)
+            )
 
         return HttpResponse(request)
