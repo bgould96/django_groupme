@@ -41,10 +41,10 @@ def index(request):
 
 @csrf_exempt
 def crocs(request):
-    name = request["name"];
+    name = request.POST.get("name")
 
     f = open("/home/ubuntu/groupme/crocs/log.txt", "w")
     f.write(name + " CALLED BACK")
     f.close()
 
-    return HttpResponse("");
+    return HttpResponse("")
