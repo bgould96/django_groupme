@@ -41,8 +41,8 @@ def index(request):
 
 @csrf_exempt
 def crocs(request):
-        name = request.POST[0]["name"]
-        sender_type = request.POST["sender_type"]
+        name = request.POST.get('name', '')
+        sender_type = request.POST.get('sender_type', '')
 
         f = open("/home/ubuntu/groupme/crocs/log.txt", "w")
         f.write(name + " CALLED BACK")
