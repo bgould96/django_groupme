@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^add_bot/', include('add_bot.urls')),
     url(r'^bishop_functions/', include('bishop_functions.urls')),
     url(r'^polls/', include('polls.urls')),
+    url(r'^crocs/', include('crocs.urls')),
     url(r'^admin/', admin.site.urls),
 ]
