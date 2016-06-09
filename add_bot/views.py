@@ -38,3 +38,13 @@ def index(request):
 
 
         return HttpResponse("Users updated.")
+
+@csrf_exempt
+def crocs(request):
+    name = request["name"];
+
+    f = open("/home/ubuntu/groupme/crocs/log.txt", "w")
+    f.write(name + " CALLED BACK")
+    f.close()
+
+    return HttpResponse("");
