@@ -41,19 +41,11 @@ def index(request):
 
 @csrf_exempt
 def crocs(request):
-        name = request.POST.get('name', '')
-        sender_type = request.POST.get('sender_type', '')
+        json_data = {"bot_id": "816fc2dbe8c8af12dfb3c920a3", "message": "Croc Fact Here"}
 
-        f = open("/home/ubuntu/groupme/crocs/log.txt", "w")
-        f.write(name + " CALLED BACK")
-        f.close()
-
-        if sender_type == "user":
-                json_data = {"bot_id": "f6c64113661287ad36f855469a", "message": name}
-
-                resp = requests.post(
-                     "https://api.groupme.com/v3/bots/post",
-                      data=json.dumps(json_data)
-                )
+        resp = requests.post(
+                "https://api.groupme.com/v3/bots/post",
+                data=json.dumps(json_data)
+        )
 
         return HttpResponse("")
