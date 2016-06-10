@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Django settings for groupme project.
 
